@@ -1,0 +1,33 @@
+// BACKGROUNDS
+.bg {
+  // The ampersand is a placeholder for 'bg' class.  The styles will take affect in
+  // the html document where it calls out 'bg-primary'
+
+  // Perfect place to create a Mixin to set the background-color and color instead of typing
+  // this same code for all backgrounds.  Keep Mixins in _config.scss
+  &-primary {
+    @include set-background($primary-color);
+  }
+
+  &-light {
+    @include set-background($light-color);
+    border: #ccc 1px solid;
+  }
+
+  &-dark {
+    @include set-background($dark-color);
+  }
+
+  &-success {
+    @include set-background($success-color);
+  }
+
+  &-danger {
+    @include set-background($danger-color);
+  }
+
+  &-white {
+    @include set-background(white);
+    border: #ccc 1px solid;
+  }
+}
