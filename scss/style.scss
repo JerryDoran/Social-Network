@@ -1,7 +1,7 @@
 @import 'config';
 @import 'utilities';
 
-// Basic resets and core styles
+// Basic resets and core styles.  Good practice for every project
 * {
   box-sizing: border-box;
   margin: 0;
@@ -81,4 +81,22 @@ img {
   position: relative;
   background: url('../img/showcase.jpg') no-repeat center center/cover;
   height: 100vh;
+
+  &-inner {
+    color: white;
+
+    // Set heigth to 100% because I will use flex box to align everything
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+
+    // Center items horizontally
+    align-items: center;
+
+    // Center items vertically
+    justify-content: center;
+    text-align: center;
+  }
 }

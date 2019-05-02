@@ -1,9 +1,27 @@
+// TEXT STYLES
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 // BACKGROUNDS
 .bg {
   // The ampersand is a placeholder for 'bg' class.  The styles will take affect in
-  // the html document where it calls out 'bg-primary'
+  // the html document where it calls out 'bg-primary', 'bg-light', etc.
 
-  // Perfect place to create a Mixin to set the background-color and color instead of typing
+  // Perfect place to create a Mixin to set the background-color and text color instead of typing
   // this same code for all backgrounds.  Keep Mixins in _config.scss
   &-primary {
     @include set-background($primary-color);
@@ -30,4 +48,68 @@
     @include set-background(white);
     border: #ccc 1px solid;
   }
+}
+
+// BUTTONS
+.btn {
+  display: inline-block;
+  background: $light-color;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  outline: none;
+
+  // So the button will have a smooth effect of transitioning from it's
+  // original color to a slighly lighter color when hovered over.
+  transition: all 0.2s ease-in;
+
+  &.btn-primary {
+    @include set-background($primary-color);
+    &:hover {
+      background: lighten($primary-color, 5%);
+    }
+  }
+
+  &.btn-dark {
+    @include set-background($dark-color);
+    &:hover {
+      background: lighten($dark-color, 5%);
+    }
+  }
+
+  &.btn-success {
+    @include set-background($success-color);
+    &:hover {
+      background: lighten($success-color, 5%);
+    }
+  }
+
+  &.btn-danger {
+    @include set-background($danger-color);
+    &:hover {
+      background: lighten($danger-color, 5%);
+    }
+  }
+
+  &:hover {
+    background: lighten($dark-color, 20%);
+    color: white;
+  }
+}
+
+.dark-overlay {
+  // Now the '.landing-inner' div will center all elements to the middle of the page
+  // because it was contained with this .dark-overlay div element.
+  height: 100%;
+  width: 100%;
+
+  // To make this an actual dark over lay we need to position it absolute within the
+  // landing class
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
