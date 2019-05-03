@@ -1,0 +1,28 @@
+.form {
+  &-group {
+    margin: 1.2rem 0;
+  }
+
+  &-text {
+    // Display block will put the text on its own line taking up the entire
+    // width of its container
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  select,
+  textarea {
+    // display block will put each element on its own line
+    // width 100% will make the element take up 100% on its container element.
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+  }
+}

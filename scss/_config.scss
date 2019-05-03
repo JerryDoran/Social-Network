@@ -7,7 +7,7 @@ $max-width: 1100px;
 
 // SET TEXT COLOR BASED ON BACKGROUND.  THIS WORKS FOR REGULAR TEXT AND NOT LINKS (A TAGS)
 @function set-text-color($color) {
-  @if (lightness($color) > 50) {
+  @if (lightness($color) > 60) {
     @return #333;
   } @else {
     @return white;
@@ -18,4 +18,29 @@ $max-width: 1100px;
 @mixin set-background($color) {
   background-color: $color;
   color: set-text-color($color);
+}
+
+// MARGIN AND PADDING
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  // Classes for margin all around each element
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  // Verticle spacing (margin top and bottom)
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  // Classes for padding all around each element
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  // Vertical spacing (padding top and bottom)
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
 }

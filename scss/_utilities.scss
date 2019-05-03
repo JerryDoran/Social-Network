@@ -5,10 +5,8 @@
   // Moves everything to middle of container
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
-  margin-top: 6rem;
+  padding: 6rem 2rem;
   margin-bottom: 3rem;
-  border: 3px solid red;
 }
 
 // TEXT STYLES
@@ -27,6 +25,21 @@
 .lead {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+// FORMAT IMAGES
+.round-img {
+  border-radius: 50%;
+}
+
+.line {
+  height: 1px;
+  background: #ccc;
+  margin: 1.5rem 0;
 }
 
 // BACKGROUNDS
@@ -76,7 +89,7 @@
   outline: none;
 
   // So the button will have a smooth effect of transitioning from it's
-  // original color to a slighly lighter color when hovered over.
+  // original color to a slightly lighter color when hovered over.
   transition: all 0.2s ease-in;
 
   &.btn-primary {
@@ -110,6 +123,57 @@
   &:hover {
     background: lighten($dark-color, 20%);
     color: white;
+  }
+}
+
+//ALERTS
+.alert {
+  padding: 0.8rem;
+  margin: 1rem;
+  opacity: 0.9;
+  background: $light-color;
+  color: #333;
+
+  &.alert-primary {
+    @include set-background($primary-color);
+  }
+
+  &.alert-dark {
+    @include set-background($dark-color);
+  }
+
+  &.alert-success {
+    @include set-background($success-color);
+  }
+
+  &.alert-danger {
+    @include set-background($danger-color);
+  }
+}
+
+// BADGES
+.badge {
+  font-size: 0.8rem;
+  padding: 0.1rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: $light-color;
+  color: #333;
+
+  &.badge-primary {
+    @include set-background($primary-color);
+  }
+
+  &.badge-dark {
+    @include set-background($dark-color);
+  }
+
+  &.badge-success {
+    @include set-background($success-color);
+  }
+
+  &.badge-danger {
+    @include set-background($danger-color);
   }
 }
 
