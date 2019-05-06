@@ -76,6 +76,10 @@ img {
   }
 }
 
+textarea {
+  font: inherit;
+}
+
 //LANDING AREA
 .landing {
   // Set to relative so that we can position other elements in it absolute.
@@ -207,3 +211,26 @@ img {
     }
   }
 }
+
+// POSTS PAGE
+.post-form-header {
+  padding: 0.5rem;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  align-items: center;
+
+  // Takes the first direct <div> only (calling first-child)
+  & > div:first-child {
+    text-align: center;
+  }
+
+  img {
+    width: 150px;
+  }
+}
+
+@import 'mobile';
